@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi QR Code Generator</title>
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- QR Code Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>WiFi QR Code Generator</h1>
+        <form id="wifi-form">
+            <div class="input-group">
+                <label for="type">WiFi Type:</label>
+                <select id="type">
+                    <option value="WPA">WPA/WPA2</option>
+                    <option value="WEP">WEP</option>
+                    <option value="">No Password</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="ssid">SSID (WiFi Name):</label>
+                <input type="text" id="ssid" placeholder="Enter SSID" required>
+            </div>
+            <div class="input-group">
+                <label for="password">WiFi Password:</label>
+                <input type="password" id="password" placeholder="Enter Password" required>
+                <button type="button" id="toggle-password">👁️</button>
+            </div>
+            <div class="input-group">
+                <input type="checkbox" id="hidden-ssid">
+                <label for="hidden-ssid">Hidden SSID</label>
+            </div>
+            <button type="submit">Generate QR Code</button>
+        </form>
+        <div class="qr-container" id="qr-container" style="display: none;">
+            <h2>Generated QR Code:</h2>
+            <canvas id="qr-code"></canvas>
+            <button id="download-button" style="display: none;">Download QR Code</button>
+        </div>
+    </div>
+
+    <!-- Script JS -->
+    <script src="./script.js"></script>
+</body>
+</html>
